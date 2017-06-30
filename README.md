@@ -34,7 +34,7 @@ Agile-dev:敏捷开发的一些技巧演示，主要内容有：
 	以上获取客户名和删除客户这两个方法中，存在重复的代码，可以考虑对其共性的部分进行抽象：
 	
 		//提取公共的方法
-		public int *getRentalIdxById*(String rentralId) throws RentalNotFoundException{
+		public int getRentalIdxById(String rentralId) throws RentalNotFoundException{
 			for (int i = 0; i < rentrals.size(); i++) {
 				BookRental bookRental = rentrals.elementAt(i);
 				if (bookRental.getId().equals(rentralId)) {
@@ -45,7 +45,7 @@ Agile-dev:敏捷开发的一些技巧演示，主要内容有：
 		}
 		
 		public String getCustomerNameById2(String rentralId) throws RentalNotFoundException{
-			int idx = *getRentalIdxById(rentralId);*
+			int idx = getRentalIdxById(rentralId);
 			return rentrals.elementAt(idx).getCusomerName();
 		}
 		
