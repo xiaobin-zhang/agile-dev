@@ -37,3 +37,7 @@ nbdist/
 dist/
 node_modules/
 .DS_Store
+
+*.class
+*.jar
+*.war
