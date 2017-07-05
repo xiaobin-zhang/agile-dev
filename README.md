@@ -68,6 +68,61 @@ Agile-dev:敏捷开发的一些技巧演示，主要内容有：
 
 >>4.存在switch或if-then-else-if这种形式的代码。
 
+>解决方案:
+>>1.可以用基于同一个基类的**不同实现**来代替类别 -- eg:advance1
+
+			public interface Currency {
+			
+				public String formate(int amount);
+				
+			}
+			
+			public class CurrencyUSD implements Currency{
+			
+				final public int USD = 0;
+				
+				@Override
+				public String formate(int amount) {
+					return String.valueOf(amount + amount * USD);
+				}
+				
+			}
+			
+			public class CurrencyRMB implements Currency{
+			
+				final public int RMB = 1;
+				
+				@Override
+				public String formate(int amount) {
+					return String.valueOf(amount + amount * RMB);
+				}
+				
+			}
+
+>>2.也可以同一类型的**不同对象**来代替类别 -- eg:advance2
+
+			public class Currency {
+				final static public int USD = 0;
+				
+				final static public int RMB = 1;
+				
+				final static public int ESCUDO = 2;
+				
+				private int currencyCode;
+				
+				public Currency(int codeType){
+					this.currencyCode = codeType;
+				}
+				
+				public String formate(int amount) {
+					return String.valueOf(amount + amount * currencyCode); 
+				}
+				
+				static Currency currencyUSD = new Currency(USD);
+				static Currency currencyRMB = new Currency(RMB);
+				static Currency currencyESCUDO = new Currency(ESCUDO);
+			}
+
 #### demo3保持代码简洁
 >保持代码简洁
 
