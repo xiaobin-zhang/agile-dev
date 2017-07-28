@@ -8,6 +8,7 @@ public class DataController {
 	
 	@RequestMapping("/")
 	public String welcome(){
+		System.out.println("Hellow ,Welcome to agile-dev,8098");
 		return "Hellow ,Welcome to agile-dev,8098";
 	}
 }
