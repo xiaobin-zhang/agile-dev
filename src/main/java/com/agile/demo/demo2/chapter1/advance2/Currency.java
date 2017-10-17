@@ -1,4 +1,4 @@
-package com.agile.demo.demo2.advance2;
+package com.agile.demo.demo2.chapter1.advance2;
 
 import lombok.Data;
 

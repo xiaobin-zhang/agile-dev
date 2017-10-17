@@ -1,4 +1,4 @@
-package com.agile.demo.demo2.advance1;
+package com.agile.demo.demo2.chapter1.advance1;
 
 public class CurrencyRMB implements Currency{
 

@@ -1,4 +1,4 @@
-package com.agile.demo.demo2;
+package com.agile.demo.demo2.chapter1;
 
 public class CurrencyMain {
 
